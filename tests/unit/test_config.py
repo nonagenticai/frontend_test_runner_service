@@ -78,10 +78,7 @@ class TestConfig:
         monkeypatch.delenv("W2V_BDD_PLAYWRIGHT_URL", raising=False)
         from w2v_common.discovery import service_url
 
-        assert (
-            service_url("bdd_playwright")
-            == "http://bdd-playwright-service.w2v:6313"
-        )
+        assert service_url("bdd_playwright") == "http://bdd-playwright-service.w2v:6313"
 
     def test_get_settings_cached(self):
         s1 = get_settings()
